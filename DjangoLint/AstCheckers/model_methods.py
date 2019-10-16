@@ -96,7 +96,7 @@ class ModelMethodsChecker(BaseChecker):
                     continue
 
                 # How many actually have this prefix?
-                xs = filter(lambda x: x.startswith(common), self.model_names)
+                xs = list(filter(lambda x: x.startswith(common), self.model_names))
 
                 self.add_message('W8015', node=node.root(),
                     args=(len(xs), common,))
